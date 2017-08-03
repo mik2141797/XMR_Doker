@@ -6,7 +6,7 @@ RUN apt-get update \
         libssl1.0.0 \
     && rm -r /var/lib/apt/lists/*
 
-ENV XMR_STAK_CPU_VERSION v1.3.0-1.5.0
+ENV XMR_STAK_CPU_VERSION v1.1.0-1.2.0
 
 RUN set -x \
     && buildDeps=' \
@@ -38,5 +38,6 @@ RUN set -x \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
     && apt-get -qq --auto-remove purge $buildDeps
+
 ENTRYPOINT ["xmr-stak-cpu"]
 CMD ["/usr/local/etc/config.txt"]
