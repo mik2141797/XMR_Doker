@@ -37,7 +37,6 @@ RUN set -x \
         ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
-    && apt-get -qq --auto-remove purge $buildDeps \
-    && sysctl -w vm.nr_hugepages=128
+    && apt-get -qq --auto-remove purge $buildDeps
 ENTRYPOINT ["xmr-stak-cpu"]
 CMD ["/usr/local/etc/config.txt"]
